@@ -1,0 +1,57 @@
+<% if end_user_signed_in? %>
+
+
+	<table class="table sticky-sidebar">
+		<tbody>
+			<tr>
+				<th>
+					<%= link_to current_end_user.nickname, end_user_path(current_end_user), class: "text-light" %><br>
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<% if current_end_user.mysinger != nil %>
+						<span class="text-light">
+							<%= current_end_user.mysinger %>
+						</span>
+					<% else %>
+						<%= link_to edit_end_user_path(current_end_user), class: "text-light" do %>
+							<p class="text-light">お気に入りのアーティストを<br>登録しましょう!!</p>
+						<%end%>
+					<% end %>
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<%= link_to "プロフィールへ", end_user_path(current_end_user), class: "container-fluid btn btn-light" %>
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<%= form_with url: search_end_users_path, method: :get, local: true do |search| %>
+						<%= search.label :search, "名前、お気に入りアーティスト名でユーザー検索できます。", class: "text-light" %>
+						<%= search.text_field :search, :size => "10*10", class: "rounded container-fluid", placeholder: '友達を探そう！' %><br><br>
+						<%= search.submit 'User Search', :name => nil, class: "btn btn-light container-fluid" %>
+					<% end %>
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<span class="text-light">New Tweet</span>
+				</th>
+			</tr>
+			<tr>
+				<th>
+					<%= form_with model:post, url: posts_path, method: :post, local: true do |post| %>
+						<%= post.text_area :tweet, class:"rounded container-fluid", placeholder: 'Tweetを入力しよう！' %><br>
+						<%= post.submit '投稿', class: "btn btn-light container-fluid" %>
+					<% end %>
+				</th>
+			</tr>
+		</tbody>
+	</table>
+<% else %>
+
+	
+
+<% end %>

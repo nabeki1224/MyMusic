@@ -1,0 +1,35 @@
+<%= form_with model:current_end_user, url: end_user_path(current_end_user) do |end_user| %>
+	<div class="field">
+		<%= end_user.label :name, "名前" %>
+		<%= end_user.text_field :name, autofocus: true, class: "rounded" %>
+	</div>
+
+	<div class="field">
+		<%= end_user.label :email, "メールアドレス" %><br />
+		<%= link_to "メールアドレスの変更はこちらから", edit_end_user_registration_path %>
+	</div>
+
+	<div class="field">
+		<%= end_user.label :telephone_number, "電話番号" %><br />
+		<%= end_user.number_field :telephone_number, class: "rounded" %>
+	</div>
+
+	<div class="field">
+		<%= end_user.label :introduction, "自己紹介" %><br />
+		<%= end_user.text_area :introduction, class: "rounded" %>
+	</div>
+
+	<div class="field">
+		<%= end_user.label :nickname, "ニックネーム" %><br />
+		<%= end_user.text_field :nickname, class: "rounded" %>
+	</div>
+
+	<div class="field">
+		<%= end_user.label :mysinger, "好きなアーティスト" %><br />
+		<%= end_user.text_field :mysinger, class: "rounded" %>
+	</div>
+
+	<div class="actions">
+      <%= end_user.submit "プロフィールを更新" %>
+    </div>
+<%end%>

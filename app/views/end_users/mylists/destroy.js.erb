@@ -1,0 +1,2 @@
+$('.my_list').html("<%= j(render 'end_users/mylists/list', mylist: nil, list: @list ) %>");
+$('.my_lists').html("<%= j(render 'end_users/mylists/index', end_user: current_end_user, mylists: current_end_user.mylists) %>");

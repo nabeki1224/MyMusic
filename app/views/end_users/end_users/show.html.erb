@@ -1,0 +1,63 @@
+<div class="container">
+	<div class="row">
+		<table class="table table-hover">
+					<tr>
+						<td><%= @end_user.name %></td>
+					</tr>
+					<tr>
+						<td><%= @end_user.birth_date %></td>
+					</tr>
+					<tr>
+						<td>
+							<% if @end_user.mysinger == nil %>
+								未登録
+							<% else %>
+								<%= @end_user.mysinger %>
+							<% end %>
+						</td>
+					</tr>
+					<% if @end_user != current_end_user %>
+					<tr>
+						<td class="follow-button"><%= render 'end_users/relationships/follow', end_user: @end_user %></td>
+					</tr>
+					<% end %>
+					<tr>
+						<td>
+							<%= link_to following_end_user_path(@end_user), class: "text-dark	" do %>
+								フォロー数 <%= @end_user.followings.count %>人
+							<% end %>
+						</td>
+						<td>
+							<%= link_to follower_end_user_path(@end_user), class: "text-dark" do %>
+								フォロワー数 <%= @end_user.followers.count %>人
+							<% end %>
+						</td>
+					</tr>
+					<tr>
+						<td><%= link_to mylist_path(@end_user), class: "text-dark" do %>
+								<% if @end_user == current_end_user %>
+									<p>Mylistを見る</p>
+								<% else %>
+									<%= @end_user.name %>のMyListをみる
+								<% end %>
+							<% end %>
+						</td>
+					</tr>
+					<% if @end_user.id == current_end_user.id %>
+						<tr>
+							<td>
+								<%= link_to "パスワード・メールアドレス変更", edit_end_user_registration_path, class: "text-dark" %>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<%= link_to "プロフィール編集", edit_end_user_path(current_end_user), class: "text-dark" %>
+
+							</td>
+						</tr>
+					<% end %>
+				</ul>
+		</table>
+
+	</div>
+</div>

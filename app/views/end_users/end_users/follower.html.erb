@@ -1,0 +1,24 @@
+<div class="container">
+	<% @end_user.followers.each do |follower| %>
+	<table class="table">
+		<tr>
+			<td><%= follower.name %></td>
+			<td>
+				<% unless current_end_user == follower %>
+					<% if current_end_user.following?(follower) %>
+						<%= form_with model:@follower, method: :delete, local: true do |follow| %>
+							<%= follow.hidden_field :follow_id, value: follower.id %>
+							<%= follow.submit 'フォローを外す', class: 'btn btn-outline-danger' %>
+						<% end %>
+					<% else %>
+						<%= form_with model: current_end_user.relationships.build, local: true do |follow| %>
+							<%= follow.hidden_field :follow_id, value: follower.id %>
+							<%= follow.submit 'フォロー', class: 'btn btn-outline-dark' %>
+						<% end %>
+					<% end %>
+				<% end %>
+			</td>
+		</tr>
+
+	<% end %>
+</div>

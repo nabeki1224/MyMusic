@@ -1,0 +1,6 @@
+<% mylists.each do |mylist| %>
+    <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E7%82%8E/<%= mylist.collection_id %>?i=<%= mylist.track_id %>"></iframe>
+	<div class="my_list">
+	    <%= render partial: 'end_users/mylists/list', locals: {mylist: Mylist.find_by(end_user_id: current_end_user.id), list: Mylist.find_by(end_user_id: end_user, collection_id: mylist.collection_id, track_id: mylist.track_id)} %>
+	</div>
+<% end %>

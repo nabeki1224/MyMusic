@@ -1,0 +1,5 @@
+<p>ようこそ、<%= @email %>さん！！</p>
+
+<p>下記リンクより登録を完了できます！！</p>
+
+<p><%= link_to '登録を確認してMyMusicをはじめる', confirmation_url(@resource, confirmation_token: @token) %></p>

@@ -1,0 +1,17 @@
+<table class="table", width="100%" style="table-layout: fixed;">
+	<%# current_end_user.followings.each do |following| %>
+		<%# following.posts.each do |post| %>
+	<% @posts.each do |post| %>
+
+			<tr class="card mb-5vh">
+				<td>
+					<%= post.end_user.nickname %> | <%= post.created_at.strftime("%Y.%m.%d %H:%M") %>
+				</td>
+				<td>
+					<%= post.tweet %>
+				</td>
+
+			</tr>
+
+	<% end %>
+</table>

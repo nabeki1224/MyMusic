@@ -1,0 +1,10 @@
+<div class="container">
+	<div class="row">
+		<% @end_users.each do |end_user| %>
+			<div class="col-md-3 card mr-3vw">
+				<%= link_to end_user.nickname, end_user_path(end_user), class: "text-dark" %>
+				<%= end_user.mysinger %>
+			</div>
+		<% end %>
+	</div>
+</div>

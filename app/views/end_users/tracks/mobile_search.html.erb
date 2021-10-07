@@ -1,0 +1,27 @@
+<p><b>音量が大変大きく設定されているので、最初はデバイスの音量を最低にしてご利用ください…！！mm</b></p>
+<% require 'itunes-search-api' %>
+
+<div class="container">
+    <div class="row">
+        <%= paginate @searchs %>
+        <% @searchs.each do |track| %>
+            <div class="border-top border-bottom" style="padding: 1vh;">
+                <div class="col-xs-5">
+                    <% if track['collectionId'] != nil %>
+                        <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E7%82%8E/<%= track['collectionId'] %>?i=<%= track['trackId'] %>"></iframe>
+                    <% end %>
+                </div><br>
+                <div class="col-xs-7">
+                    <%= link_to track_path(track['collectionId'], track['trackId']), class: "text-dark" do %>
+                        <p><%= track['trackName'] %></p>
+                        <p><%= track['artistName'] %></p><br>
+                    <% end %>
+               </div>
+            </div>
+        <% end %>
+
+        <%= paginate @searchs, class:"text-dark" %>
+        </div>
+    </div>
+
+</div>
