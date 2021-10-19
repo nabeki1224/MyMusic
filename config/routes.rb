@@ -3,13 +3,11 @@ Rails.application.routes.draw do
     devise_for :end_users, controllers: {
         sessions: 'end_users/sessions',
         registrations: 'end_users/registrations',
-        passwords: 'end_users/passwords'
+        passwords: 'end_users/passwords',
     }
     root "home#top"
 
     get "/about" => "home#about"
-    get '/auth/:provider/callback', to: 'twitters#create'
-    get '/logout', to: 'twitters#destroy'
     get 'tracks/search'
     get 'tracks/:collection_id/:track_id', to: 'tracks#show', as: "track"
     post 'tracks/:collection_id/:track_id/mylists', to: 'mylists#create', as: "new_mylist"

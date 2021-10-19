@@ -67,9 +67,6 @@ gem 'pry-byebug'
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 
-gem 'dotenv-rails'
-gem 'omniauth-twitter'
-
 gem 'httparty'
 
 # 画像投稿用gem
@@ -78,8 +75,9 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 
 gem 'kaminari','~> 1.2.1'
-
-gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
+
+gem 'omniauth-line'
+gem 'dotenv-rails'

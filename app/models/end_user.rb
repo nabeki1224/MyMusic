@@ -3,6 +3,7 @@ class EndUser < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  
   enum sex:    [ :male, :female, :other ]
 
   has_many :mylists, dependent: :destroy
@@ -32,10 +33,11 @@ class EndUser < ApplicationRecord
   end
 
   def self.search(search)
-      if search
-        EndUser.where(['content LIKE ?', "%#{search}%"])
-      else
-        EndUser.all
-      end
+    if search
+      EndUser.where(['content LIKE ?', "%#{search}%"])
+    else
+      EndUser.all
     end
+  end
+
 end
