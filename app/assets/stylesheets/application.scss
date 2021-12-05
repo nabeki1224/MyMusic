@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
  @import "bootstrap";
 
 
@@ -25,15 +30,23 @@
  .side-bar {
  	position: sticky;
  }
+ 
+ .side-pad {
+  padding: 0px 17px;
+ }
 
  .top-image {
  	height: 100vh;
 	background: image-url('guitar.jpg');
 	background-position: top;
 	background-size: cover;
- }
-
-
+	}
+	
+	.reset {
+	 margin: 0px;
+	 padding: 0px;
+	 flex: none;
+	}
 
  .w-20per {
      width: 20%;
@@ -62,7 +75,7 @@
 
 @media screen and (min-width: 768px) {
 	.color {
-		background: linear-gradient(to right, #8b4513 0%, #8b4513 28%, #d2b48c 28%, #d2b48c 100%);
+		background: linear-gradient(to right, #8b4513 0%, #8b4513 25%, #d2b48c 25%, #d2b48c 100%);
 	}
 }
 
