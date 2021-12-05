@@ -1,10 +1,10 @@
-class EndUsers::HomeController < ApplicationController
-
+module EndUsers
+  class HomeController < ApplicationController
     def top
-    	render :layout => nil
-    	@end_user = EndUser.new
+      @end_user = EndUser.new
     end
     
     def about
     end
+  end
 end
