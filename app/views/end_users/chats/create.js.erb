@@ -1,0 +1,3 @@
+$('#saikabu').html("<%= j(render 'chat_form', chat: @chat, partner: @partner) %>");
+$('.chat-detail').html("<%= j(render 'index', chats: @chats, partner: @partner) %>");
+$(".form-control").val("");

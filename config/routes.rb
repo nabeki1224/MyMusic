@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :end_users do
+    get 'chats/index'
+    get 'chats/show'
+  end
   scope module: :end_users do
     devise_for :end_users, controllers: {
         sessions: 'end_users/sessions',
@@ -23,6 +27,7 @@ Rails.application.routes.draw do
     resources :relationships, only: [:create, :destroy]
     get '/deactivate' => "end_users#deactivate"
     resources :posts, only: [:create, :dsetroy, :show, :index]
+    resources :chats
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,17 @@
+    <% chats.each do |chat| %>
+      <% if chat.end_user_id == current_end_user.id %>
+        <div class="float-right">
+          <%= current_end_user.nickname %><br>
+          <div class="mycomment bg-warning rounded text-break">
+            <%= chat.sentence %>
+          </div>
+        </div>
+      <% else %>
+        <div class="float-left">
+          <%= partner.nickname %><br>
+          <div class="partnercomment bg-light rounded text-break">
+            <%= chat.sentence %>
+          </div>
+        </div>
+      <% end %><br><br><br><br>
+    <% end %>

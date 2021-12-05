@@ -73,6 +73,32 @@
 	margin-right: 3vw;
 }
 
+.chats {
+}
+
+.mycomment {
+ display: inline-block;
+ max-width: 450px;
+ margin-right: 0px;
+ padding: 3px 16px;
+}
+
+.partnercomment {
+ display: inline-block;
+ max-width: 450px;
+ padding: 3px 16px;
+}
+
+.scroll {
+ overflow-y: scroll;
+}
+
+
+
+
+
+
+
 @media screen and (min-width: 768px) {
 	.color {
 		background: linear-gradient(to right, #8b4513 0%, #8b4513 25%, #d2b48c 25%, #d2b48c 100%);
