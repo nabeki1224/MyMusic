@@ -1,7 +1,5 @@
 <% if end_user_signed_in? %>
-
-
-	<table class="table sticky-sidebar">
+  <table class="table sticky-sidebar">
 		<tbody>
 			<tr>
 				<th>
@@ -17,7 +15,7 @@
 					<% else %>
 						<%= link_to edit_end_user_path(current_end_user), class: "text-light" do %>
 							<p class="text-light">お気に入りのアーティストを<br>登録しましょう!!</p>
-						<%end%>
+						<% end %>
 					<% end %>
 				</th>
 			</tr>

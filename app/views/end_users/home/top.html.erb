@@ -1,42 +1,41 @@
-    <div class="top-image">
-    <br><br>
-    <div class="container">
-		<div class="text-center">
-		<h1>MyMusic</h1><br><br>
-		<% if end_user_signed_in? %>
+<div class="top-image">
+  <br><br>
+  <div class="container">
+	  <div class="text-center">
+		  <h1>MyMusic</h1><br><br>
+		  <% if end_user_signed_in? %>
 		    <%= form_with url: tracks_search_path, method: :get, local: true do |search| %>
-	      	  <%= search.text_field :term, class:"border border-dark rounded" %>
-	      	  <%= search.submit :search, class:"btn btn-outline-dark" %>
-	      	<% end %>
+	        <%= search.text_field :term, class:"border border-dark rounded" %>
+	        <%= search.submit :search, class:"btn btn-outline-dark" %>
+	      <% end %>
+      <% else %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.label :email, "メールアドレス" %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"rounded" %>
+          </div>
 
-		<% else %>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email, "メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"rounded" %>
-  </div>
+          <div class="field">
+            <%= f.label :password, "パスワード" %><br />
+            <%= f.password_field :password, autocomplete: "current-password", class:"rounded" %>
+          </div>
 
-  <div class="field">
-    <%= f.label :password, "パスワード" %><br />
-    <%= f.password_field :password, autocomplete: "current-password", class:"rounded" %>
-  </div>
+          <% if devise_mapping.rememberable? %>
+            <div class="field">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me, "ログインを保持" %>
+            </div>
+          <% end %>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me, "ログインを保持" %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "LOGIN", class:"btn btn-dark" %>
-  </div>
-<% end %>
-<br>
+          <div class="actions">
+            <%= f.submit "LOGIN", class:"btn btn-dark" %>
+          </div>
+        <% end %>
+      <br>
 
 <%#= render "end_users/shared/links" %>
 
-		<% end %>
-		</div>
+		  <% end %>
 		</div>
 	</div>
+</div>

@@ -1,76 +1,70 @@
 <div class="container">
   <div class="row">
     <div class="mx-auto">
-
-
-    <h2>アカウント登録</h2>
+      <h2>アカウント登録</h2>
     
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "end_users/shared/error_messages", resource: resource %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "end_users/shared/error_messages", resource: resource %>
     
-      <div class="field">
-        <%= f.label :name, "名前" %><br />
-        <%= f.text_field :name, autofocus: true, autocomplete: "名前", class:"rounded" %>
-      </div>
+        <div class="field">
+          <%= f.label :name, "名前" %><br />
+          <%= f.text_field :name, autofocus: true, autocomplete: "名前", class:"rounded" %>
+        </div>
     
-      <div class="field">
-        <%= f.label :name_kana, "ナマエ" %><br />
-        <%= f.text_field :name_kana, autocomplete: "ナマエ", class:"rounded" %>
-      </div>
+        <div class="field">
+          <%= f.label :name_kana, "ナマエ" %><br />
+          <%= f.text_field :name_kana, autocomplete: "ナマエ", class:"rounded" %>
+        </div>
     
-      <div class="field">
-        <%= f.label :email, "メールアドレス" %><br />
-        <%= f.email_field :email, autocomplete: "email", class:"rounded" %>
-      </div>
+        <div class="field">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, autocomplete: "email", class:"rounded" %>
+        </div>
       
-      <div class="field">
-        <%= f.label :telephone_number, "電話番号" %><br />
-        <%= f.number_field :telephone_number, autocomplete: "電話番号", class:"rounded" %>
-      </div>
+        <div class="field">
+          <%= f.label :telephone_number, "電話番号" %><br />
+          <%= f.number_field :telephone_number, autocomplete: "電話番号", class:"rounded" %>
+        </div>
       
-      <div class="field">
-        <%= f.label :nickname, "ニックネーム" %><span class="text-light">（ほかのユーザーに公開されます）</span><br />
-        <%= f.text_field :nickname, autocomplete: "ニックネーム", class:"rounded" %>
-      </div>
+        <div class="field">
+          <%= f.label :nickname, "ニックネーム" %><span class="text-light">（ほかのユーザーに公開されます）</span><br />
+          <%= f.text_field :nickname, autocomplete: "ニックネーム", class:"rounded" %>
+        </div>
       
-      <div class="field">
-        <%= f.label :birth_date, "生年月日（13歳未満の方は利用できません。）", class:"text-light" %><br />
-        <%= f.date_select :birth_date, use_month_numbers: true,start_year: 1900, end_year: (Time.now.year - 13), default: Date.new(2000, 1, 1) %>
-      </div>
-      <div class="field">
-        <%= f.label :sex, "性別", class:"text-light" %><br />
-        <%= f.label :male, "男性", class:"text-light" %>
-        <%= f.radio_button :sex, :male %>
-        <%= f.label :female, "女性", class:"text-light" %>
-        <%= f.radio_button :sex, :female %>
-        <%= f.label :other, "その他", class:"text-light" %>
-        <%= f.radio_button :sex, :other %>
-      </div>
+        <div class="field">
+          <%= f.label :birth_date, "生年月日（13歳未満の方は利用できません。）", class:"text-light" %><br />
+          <%= f.date_select :birth_date, use_month_numbers: true,start_year: 1900, end_year: (Time.now.year - 13), default: Date.new(2000, 1, 1) %>
+        </div>
+        <div class="field">
+          <%= f.label :sex, "性別", class:"text-light" %><br />
+          <%= f.label :male, "男性", class:"text-light" %>
+          <%= f.radio_button :sex, :male %>
+          <%= f.label :female, "女性", class:"text-light" %>
+          <%= f.radio_button :sex, :female %>
+          <%= f.label :other, "その他", class:"text-light" %>
+          <%= f.radio_button :sex, :other %>
+        </div>
       
+        <div class="field">
+          <%= f.label :password, "パスワード", class:"text-light" %>
+          <% if @minimum_password_length %>
+            <em class="text-light">(<%= @minimum_password_length %>字以上)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class:"rounded" %>
+        </div>
     
-      <div class="field">
-        <%= f.label :password, "パスワード", class:"text-light" %>
-        <% if @minimum_password_length %>
-        <em class="text-light">(<%= @minimum_password_length %>字以上)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "new-password", class:"rounded" %>
-      </div>
+        <div class="field">
+          <%= f.label :password_confirmation, "パスワード（確認）", class:"text-light" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"rounded" %>
+        </div>
+        <br>
     
-      <div class="field">
-        <%= f.label :password_confirmation, "パスワード（確認）", class:"text-light" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"rounded" %>
-      </div>
-      <br>
-    
-      <div class="actions">
-        <%= f.submit "MyMusicを始める！", class:"btn btn-danger" %>
-
-      <br>
-    <% end %>
-
-
-    <%= render "end_users/shared/links" %>
-      </div>    </div>
+        <div class="actions">
+          <%= f.submit "MyMusicを始める！", class:"btn btn-danger" %><br>
+        </div>
+      <% end %>
+      <%= render "end_users/shared/links" %>
+    </div>
   </div>
 </div>
 
