@@ -2,7 +2,7 @@
 	<div class="row">
 		<table class="table table-hover">
 			<tr>
-				<td><%= @end_user.name %></td>
+				<td><%= @end_user.nickname %></td>
 			</tr>
 			<tr>
 				<td><%= @end_user.birth_date %></td>
@@ -39,7 +39,7 @@
 					  <% if @end_user == current_end_user %>
 						  <p>Mylistを見る</p>
 					  <% else %>
-						  <%= @end_user.name %>のMyListをみる
+						  <%= @end_user.nickname %>のMyListをみる
 					  <% end %>
 			  	<% end %>
 				</td>
