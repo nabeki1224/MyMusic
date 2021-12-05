@@ -16,6 +16,7 @@ class EndUser < ApplicationRecord
   has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id', dependent: :destroy
   has_many :followers, through: :reverse_of_relationships, source: :end_user, dependent: :destroy
   has_many :posts, dependent: :destroy
+  has_many :chats, dependent: :destroy
 
   def follow(other_end_user)
     if self != other_end_user # フォローする対象が自分じゃない時

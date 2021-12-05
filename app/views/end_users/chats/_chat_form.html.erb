@@ -1,0 +1,7 @@
+    <%= form_with model: chat, remote: true, url: "/chats", method: "post" do |chat| %>
+      <div class="form-group">
+        <%= chat.text_area :sentence, class: "form-control", placeholder: "メッセージを入力" %><br>
+        <%= chat.hidden_field :partner_id, :value =>  partner.id %>
+        <%= chat.submit "送信", class: "btn btn-warning float-right" %>
+      </div>
+    <% end %>
