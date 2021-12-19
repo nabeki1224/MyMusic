@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ご覧いただきありがとうございます！
 
-Things you may want to cover:
+本アプリは音楽を通じて人と人をつなげるマッチングアプリになります！
 
-* Ruby version
+# 機能
 
-* System dependencies
+現在(2021.12時点)主な機能は以下の通りです。
+・音楽検索および再生
+・ブログ
+・ユーザーフォロー，チャット
+・音楽マイリスト追加
 
-* Configuration
+# 開発環境
+開発はWindows10で行っておりますが，そのほかのバージョンやMacOsでも動作するかと思います（動作未確認）。
+Ruby 2.6.3
+Rails 6.1.4
+Sqlite3
 
-* Database creation
 
-* Database initialization
+# 使い方
+まずは音楽をマイリストに追加しましょう。
+他の方がフォローをしてくれたら実際にお話してみましょう！
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 追加予定の機能
+2022.2までにアーティストからユーザーを検索する機能を実装できればと考えております。
+（そのため2021.1よりApple Musicについての調査を行う予定です。）
