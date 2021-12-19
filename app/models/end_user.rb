@@ -17,6 +17,11 @@ class EndUser < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :end_user, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :chats, dependent: :destroy
+  validates :name, presence: true
+  validates :name_kana, presence: true
+  validates :telephone_number, presence: true, uniqueness: true
+  validates :sex, presence: true
+  validates :email, presence: true, uniqueness: true
 
   def follow(other_end_user)
     if self != other_end_user # フォローする対象が自分じゃない時
