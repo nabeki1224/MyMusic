@@ -18,6 +18,6 @@ module PFMusic
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.hosts << ".amazonaws.com"
+    config.hosts << "2b609ca90e784f9fbe2bbc0ce04e050a.vfs.cloud9.ap-northeast-1.amazonaws.com"
   end
 end
