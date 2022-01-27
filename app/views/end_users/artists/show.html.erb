@@ -1,0 +1,15 @@
+<div class="container">
+  <h1><%= @artistname.children %></h1>
+  <% if @mysingers.find_by(artist_id: params[:artist_id]) == nil %>
+    <%= form_with model: @mysinger, url: end_user_mysingers_path(current_end_user), local: true do |f| %>
+      <%= f.hidden_field :artist_id, value: params[:artist_id] %>
+      <%= f.submit "アーティストをフォローする", class: "btn btn-outline-danger" %>
+    <% end %>
+  <% else %>
+    <%= form_with model: @mysinger, url: end_user_mysinger_path(current_end_user, params[:artist_id]), method: :delete, local: true do |f| %>
+      <%= f.submit "アーティストのフォローを解除する", class: "btn btn-danger" %>
+    <% end %>
+  <% end %>
+  <h3><%= @artistname.children %>について</h3>
+  <%= @aboutartist.children.text %>
+</div>

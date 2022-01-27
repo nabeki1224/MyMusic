@@ -1,0 +1,7 @@
+<div class="container">
+  <% @mysingers.each do |mysinger| %>
+    <% page = @agent.get("https://music.apple.com/jp/artist/#{mysinger.artist_id}") %>
+    <% artistname = page.search('h1') %>
+    <%= link_to artistname.children, artist_path(mysinger.artist_id), class: "text-dark" %>
+  <% end %>
+</div>

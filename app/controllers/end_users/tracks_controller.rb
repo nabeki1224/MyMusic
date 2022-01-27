@@ -26,7 +26,25 @@ module EndUsers
 
     def show
       @list = Mylist.new
-      @mylist = Mylist.find_by(end_user_id: current_end_user, track_id: params[:track_id], collection_id: params[:collection_id])
+      @mylist = Mylist.find_by(end_user_id: current_end_user, artist_id: params[:artist_id], track_id: params[:track_id], collection_id: params[:collection_id])
+      # @artist_page = open("https://music.apple.com/jp/artist/#{params[:artist_id]}").read
+    end
+    
+    def create
+      @list = Mylist.new
+      @list.end_user_id = current_end_user.id
+      @list.artist_id = params[:artist_id]
+      @list.track_id = params[:track_id]
+      @list.collection_id = params[:collection_id]
+      @list.save
+      @mylist = Mylist.find_by(end_user_id: current_end_user, artist_id: params[:artist_id], track_id: params[:track_id], collection_id: params[:collection_id])
+    end
+    
+    def destroy
+      @mylist = Mylist.find_by(end_user_id: current_end_user, artist_id: params[:artist_id], track_id: params[:track_id], collection_id: params[:collection_id])
+      @list = Mylist.new
+      @mylist.destroy
+      @mylist = Mylist.find_by(end_user_id: current_end_user, artist_id: params[:artist_id], track_id: params[:track_id], collection_id: params[:collection_id])
     end
   end
 end
