@@ -13,6 +13,7 @@ module EndUsers
     end
 
     def index
+      @post = Post.new
       @posts = current_end_user.posts
       current_end_user.followings.each do |following|
         @posts += following.posts

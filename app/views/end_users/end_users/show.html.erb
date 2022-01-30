@@ -7,15 +7,6 @@
 			<tr>
 				<td><%= @end_user.birth_date %></td>
 			</tr>
-			<tr>
-				<td>
-					<% if @end_user.mysinger == nil %>
-						未登録
-					<% else %>
-						<%= @end_user.mysinger %>
-					<% end %>
-				</td>
-			</tr>
 			<% if @end_user != current_end_user %>
 				<tr>
 					<td class="follow-button"><%= render 'end_users/relationships/follow', end_user: @end_user %></td>
@@ -31,6 +22,11 @@
 			    <%= link_to follower_end_user_path(@end_user), class: "text-dark" do %>
 						フォロワー数 <%= @end_user.followers.count %>人
 					<% end %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<%= link_to "Mysingerを見る", end_user_mysingers_path(@end_user), class: "text-dark" %>
 				</td>
 			</tr>
 			<tr>

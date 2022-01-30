@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 2022_01_27_040122) do
   create_table "mysingers", force: :cascade do |t|
     t.integer "end_user_id"
     t.integer "artist_id"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

@@ -1,0 +1,9 @@
+<div class="container">
+  <table class="table">
+    <% @follower.each do |follower| %>
+      <tr>
+        <td><%= link_to follower.name, end_user_path(follower.id), class: "text-dark" %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

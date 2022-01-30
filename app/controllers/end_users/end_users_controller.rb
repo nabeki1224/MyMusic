@@ -30,14 +30,14 @@ module EndUsers
       end
     end
 
-    def search
-      if params[:search].present?
-        @end_users = EndUser.where(['nickname LIKE ? OR name LIKE ? OR mysinger LIKE ?',
-                     "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%"])
-      else
-        @end_users = EndUser.none
-      end
-    end
+    # def search
+    #   if params[:search].present?
+    #     @end_users = EndUser.where() EndUser.where(['nickname LIKE ? OR name LIKE ?',
+    #                 "%#{params[:search]}%", "%#{params[:search]}%")
+    #   else
+    #     @end_users = EndUser.none
+    #   end
+    # end
 
     private
 

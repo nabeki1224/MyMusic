@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     post 'tracks/:artist_id/:collection_id/:track_id', to: 'tracks#create', as: "new_track"
     delete 'tracks/:artist_id/:collection_id/:track_id', to: 'tracks#destroy', as: "destroy_track"
     get 'artists/:artist_id', to: 'artists#show', as: "artist"
+    get 'artists/:artist_id/follower', to: 'artists#follower', as: "artist_follower"
   
     resources :mylists, only:[:show]
     resources :end_users, only:[:show, :edit, :update, :index] do
@@ -35,7 +36,7 @@ Rails.application.routes.draw do
           get :following
           get :follower
       end
-      get :search, on: :collection
+      # get :search, on: :collection
     end
     resources :relationships, only: [:create, :destroy]
     get '/deactivate' => "end_users#deactivate"

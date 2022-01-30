@@ -24,15 +24,15 @@
 					<%= link_to "プロフィールへ", end_user_path(current_end_user), class: "container-fluid btn btn-light" %>
 				</th>
 			</tr>
-			<tr>
-				<th>
-					<%= form_with url: search_end_users_path, method: :get, local: true do |search| %>
-						<%= search.label :search, "名前、お気に入りアーティスト名でユーザー検索できます。", class: "text-light" %>
-						<%= search.text_field :search, :size => "10*10", class: "rounded container-fluid", placeholder: '友達を探そう！' %><br><br>
-						<%= search.submit 'User Search', :name => nil, class: "btn btn-light container-fluid" %>
-					<% end %>
-				</th>
-			</tr>
+			<!--<tr>-->
+			<!--	<th>-->
+			<!--		<%#= form_with url: search_end_users_path, method: :get, local: true do |search| %>-->
+			<!--			<%#= search.label :search, "名前、お気に入りアーティスト名でユーザー検索できます。", class: "text-light" %>-->
+			<!--			<%#= search.text_field :search, :size => "10*10", class: "rounded container-fluid", placeholder: '友達を探そう！' %><br><br>-->
+			<!--			<%#= search.submit 'User Search', :name => nil, class: "btn btn-light container-fluid" %>-->
+			<!--		<%# end %>-->
+			<!--	</th>-->
+			<!--</tr>-->
 			<tr>
 				<th>
 					<span class="text-light">New Tweet</span>

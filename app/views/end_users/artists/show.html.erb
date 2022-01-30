@@ -3,6 +3,7 @@
   <% if @mysingers.find_by(artist_id: params[:artist_id]) == nil %>
     <%= form_with model: @mysinger, url: end_user_mysingers_path(current_end_user), local: true do |f| %>
       <%= f.hidden_field :artist_id, value: params[:artist_id] %>
+      <%= f.hidden_field :name, value: @artistname.children %>
       <%= f.submit "アーティストをフォローする", class: "btn btn-outline-danger" %>
     <% end %>
   <% else %>
@@ -10,6 +11,7 @@
       <%= f.submit "アーティストのフォローを解除する", class: "btn btn-danger" %>
     <% end %>
   <% end %>
+  <%= link_to "follower", artist_follower_path(params[:artist_id]), class: "btn btn-success" %>
   <h3><%= @artistname.children %>について</h3>
   <%= @aboutartist.children.text %>
 </div>

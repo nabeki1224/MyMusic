@@ -21,6 +21,13 @@
  @import "bootstrap";
 
 
+ body{
+  font-family: fantasy;
+ }
+
+ .color {
+		background: #d2b48c;
+	}
  .container {
  }
 
@@ -99,18 +106,36 @@
 
 
 
-@media screen and (min-width: 768px) {
-	.color {
-		background: linear-gradient(to right, #8b4513 0%, #8b4513 25%, #d2b48c 25%, #d2b48c 100%);
-	}
-}
+// @media screen and (min-width: 768px) {
+// 	.color {
+// 		// background: linear-gradient(to right, #8b4513 0%, #8b4513 25%, #d2b48c 25%, #d2b48c 100%);
+// 		background-color: #d2b48c;
+// 	}
+// 	.nav-btn {
+// 	 width: 90vw;
+// 	 margin: 1vh auto;
+// 	}
+// 	.track-search-field {
+//  width: 70vw;
+//  }
+//  .track-search-button {
+//   width: 20vw;
+//  }
 
-@media screen and (max-width: 767px) {
-	.color {
-		background: #d2b48c;
-	}
+// }
+
+@media screen and (max-width: 992px) {
+
 	.nav-btn {
-		width: 50vh;
+		width: 90vw;
 		margin: 1vh auto;
 	}
+.track-search-field {
+ width: 70vw;
+ line-height: 2.0;
+}
+.track-search-button {
+ width: 20vw;
+}
+
 }

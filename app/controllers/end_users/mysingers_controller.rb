@@ -1,8 +1,8 @@
 class EndUsers::MysingersController < ApplicationController
   require 'mechanize'
   def index
-    end_user = EndUser.find(params[:end_user_id])
-    @mysingers = end_user.mysingers
+    @end_user = EndUser.find(params[:end_user_id])
+    @mysingers = @end_user.mysingers
     @agent = Mechanize.new
   end
 
@@ -21,6 +21,6 @@ class EndUsers::MysingersController < ApplicationController
   
   private
   def mysinger_params
-    params.require(:mysinger).permit(:artist_id)
+    params.require(:mysinger).permit(:artist_id, :name)
   end
 end

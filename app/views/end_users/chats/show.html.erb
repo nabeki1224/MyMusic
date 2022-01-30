@@ -1,9 +1,11 @@
-<h2><%= @partner.nickname %></h2>
-<div class = "container chats">
-  <div class = "chat-detail">
-    <%= render 'index', chats: @chats, partner: @partner %>
-  </div>
-  <div id="saikabu">
-    <%= render 'chat_form', chat: @chat, partner: @partner %>
+<div class="container">
+  <h2><%= @partner.nickname %></h2>
+  <div class = "container chats">
+    <div class = "chat-detail">
+      <%= render 'index', chats: @chats, partner: @partner %>
+    </div>
+    <div id="saikabu">
+      <%= render 'chat_form', chat: @chat, partner: @partner %>
+    </div>
   </div>
 </div>
