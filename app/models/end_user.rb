@@ -17,6 +17,7 @@ class EndUser < ApplicationRecord
   has_many :followers, through: :reverse_of_relationships, source: :end_user, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :chats, dependent: :destroy
+  has_many :mysingers, dependent: :destroy
   validates :name, presence: true
   validates :name_kana, presence: true
   validates :telephone_number, presence: true, uniqueness: true

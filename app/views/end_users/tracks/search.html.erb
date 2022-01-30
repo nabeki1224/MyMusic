@@ -22,12 +22,12 @@
                         <% if track['collectionId'] != nil %>
                             <td><%= track['collectionName'] %></td>
                             <td><%= track['trackName'] %></td>
-                            <td><%= track['artistName'] %></td>
+                            <td><%= link_to track['artistName'], artist_path(track['artistId']), class: "text-dark" %></td>
                             <td>
-                                    <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E7%82%8E/<%= track['collectionId'] %>?i=<%= track['trackId'] %>"></iframe>
+                                <iframe allow="autoplay *; encrypted-media *; fullscreen *" frameborder="0" height="150" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/%E7%82%8E/<%= track['collectionId'] %>?i=<%= track['trackId'] %>"></iframe>
                             </td>
                             <td>
-                                    <%= link_to "詳細", track_path(track['collectionId'], track['trackId']), class:"btn btn-dark" %>
+                                    <%= link_to "詳細", track_path(track['artistId'], track['collectionId'], track['trackId']), class:"btn btn-dark" %>
                             </td>
                         <% end %>
                     </tr>

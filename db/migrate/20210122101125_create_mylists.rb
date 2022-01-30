@@ -4,6 +4,8 @@ class CreateMylists < ActiveRecord::Migration[5.2]
 
       t.integer :end_user_id
       t.integer :track_id
+      t.integer :collection_id
+      t.integer :artist_id
 
       t.timestamps
     end

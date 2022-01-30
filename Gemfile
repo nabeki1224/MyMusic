@@ -85,3 +85,6 @@ end
 
 gem 'omniauth-line'
 gem 'dotenv-rails'
+
+gem 'mechanize'
+# スクレイピング

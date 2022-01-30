@@ -1,7 +1,7 @@
 class EndUsers::ChatsController < ApplicationController
   def index
     @my_chats = current_end_user.chats
-    @chat_partners = current_end_user.followings
+    @chat_partners = current_end_user.followings && current_end_user.followers
   end
 
   def show

@@ -1,0 +1,15 @@
+<div class="container">
+  <h2><%= @end_user.nickname %>のフォローしているアーティスト</h2>
+  <table class="table">
+    <thead>
+      <th>アーティスト名</th>
+    </thead>
+    <% @mysingers.each do |mysinger| %>
+      <% page = @agent.get("https://music.apple.com/jp/artist/#{mysinger.artist_id}") %>
+      <% artistname = page.search('h1') %>
+      <tr>
+        <td><%= link_to artistname.children, artist_path(mysinger.artist_id), class: "text-dark" %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

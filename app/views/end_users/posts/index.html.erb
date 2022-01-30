@@ -1,12 +1,24 @@
-<table class="table", width="100%" style="table-layout: fixed;">
-	<% @posts.each do |post| %>
-  	<tr class="card mb-5vh">
-			<td>
-				<%= post.end_user.nickname %> | <%= post.created_at.strftime("%Y.%m.%d %H:%M") %>
-			</td>
-  		<td>
-				<%= post.tweet %>
-			</td>
-		</tr>
-	<% end %>
-</table>
+<div class="container">
+  <table class="table", width="100%" style="table-layout: fixed;">
+	 <% @posts.each do |post| %>
+  	 <tr class="card mb-5vh">
+			 <td>
+			 	 <%= post.end_user.nickname %> | <%= post.created_at.strftime("%Y.%m.%d %H:%M") %>
+		 	 </td>
+  		 <td>
+				 <%= post.tweet %>
+			 </td>
+		 </tr>
+	 <% end %>
+  </table>
+  <div class="fixed-bottom">
+	  <%= form_with model: @post do |f| %>
+	    <div class="row">
+			  <div class="col-md-7 mx-auto">
+					<%= f.text_area :tweet, class: "form-control" %>
+					<%= f.submit 'Tweet', class:"btn" %>
+		  	</div>
+		  </div>
+	  <% end %>
+  </div>
+</div>
