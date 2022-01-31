@@ -80,6 +80,7 @@ gem "refile-mini_magick"
 
 gem 'kaminari','~> 1.2.1'
 group :production do
+  gem 'unicorn', '~> 6.0'
   # gem 'mysql2'
 end
 
