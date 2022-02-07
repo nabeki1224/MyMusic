@@ -6,7 +6,7 @@ ruby '2.6.9'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.4'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -39,7 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # gem 'mysql2'
+  # gem 'sqlite3'
 end
 
 group :development do
@@ -80,10 +80,8 @@ gem "refile-mini_magick"
 
 gem 'kaminari','~> 1.2.1'
 group :production do
-  gem 'unicorn', '~> 6.0'
-  # gem 'mysql2'
+  gem 'pg'
 end
-
 gem 'omniauth-line'
 gem 'dotenv-rails'
 
