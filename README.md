@@ -25,8 +25,8 @@ Sqlite3<br>
 他の方がフォローをしてくれたら実際にお話してみましょう！<br>
 
 # URL
-AWS：現在実装途中
-Heroku：https://mymusicfriends.herokuapp.com/
+AWS：現在実装途中<br>
+Heroku：https://mymusicfriends.herokuapp.com/<br>
 
 # 追加予定の機能
 ~~2022.2までにアーティストからユーザーを検索する機能を実装できればと考えております。<br>
