@@ -17,11 +17,16 @@
 Ruby 2.6.3<br>
 Rails 6.1.4<br>
 Sqlite3<br>
-
+（AWS: MySQL）<br>
+（Heroku: PostgreSQL）<br>
 
 # 使い方
 まずは音楽をマイリストに追加しましょう。<br>
 他の方がフォローをしてくれたら実際にお話してみましょう！<br>
+
+# URL
+AWS：現在実装途中
+Heroku：https://mymusicfriends.herokuapp.com/
 
 # 追加予定の機能
 ~~2022.2までにアーティストからユーザーを検索する機能を実装できればと考えております。<br>
