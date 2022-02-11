@@ -32,7 +32,8 @@ AWS：現在実装途中<br>
 Heroku：https://mymusicfriends.herokuapp.com/<br>
 
 # 設計
-[MyMusic_ERdiagram.pdf](https://github.com/nabeki1224/MyMusic/files/8045792/MyMusic_ERdiagram.pdf)
+
+![MyMusic_ERdiagram](https://user-images.githubusercontent.com/58101668/153534316-ddf83668-4fb1-4436-9414-008d6e18f5a6.png)
 
 # 今後実装したい機能
 ~~2022.2までにアーティストからユーザーを検索する機能を実装できればと考えております。<br>
