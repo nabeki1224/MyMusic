@@ -31,6 +31,9 @@ Sqlite3<br>
 AWS：現在実装途中<br>
 Heroku：https://mymusicfriends.herokuapp.com/<br>
 
+# 設計
+[MyMusic_ERdiagram.pdf](https://github.com/nabeki1224/MyMusic/files/8045792/MyMusic_ERdiagram.pdf)
+
 # 今後実装したい機能
 ~~2022.2までにアーティストからユーザーを検索する機能を実装できればと考えております。<br>
 （そのため2021.1よりApple Musicについての調査を行う予定です。）~~<br>
