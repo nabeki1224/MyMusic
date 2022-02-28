@@ -12,9 +12,11 @@
                     <% end %>
                 </div><br>
                 <div class="col-xs-7">
-                    <%= link_to track_path(track['collectionId'], track['trackId']), class: "text-dark" do %>
+                    <%= link_to track_path(track['artistId'], track['collectionId'], track['trackId']), class: "text-dark" do %>
                         <p><%= track['trackName'] %></p>
-                        <p><%= track['artistName'] %></p><br>
+                    <% end %>
+                    <%= link_to artist_path(track['artistId']), class: "text-dark" do %>
+                      <p><%= track['artistName'] %></p><br>
                     <% end %>
                </div>
             </div>
