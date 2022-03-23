@@ -28,7 +28,7 @@ Sqlite3<br>
 他の方がフォローをしてくれたら実際にお話してみましょう！<br>
 
 # URL
-AWS：http://52.199.128.139/<br>
+AWS：http://52.199.128.139/ (email: guest@guest.com, password: mymusic)<br>
 Heroku：https://mymusicfriends.herokuapp.com/<br>
 
 # 設計
