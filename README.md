@@ -41,5 +41,5 @@ Heroku：https://mymusicfriends.herokuapp.com/<br>
 →2022.1.30 アーティストをフォローおよびそこからエンドユーザーを見つけることができる機能の追加済<br>
 
 ~~インフラをAWSにする~~<br>
-→2022.3.1 AWS デプロイ完了
-docker化<br>
+→2022.3.1 AWS デプロイ完了<br>
+いずれはdocker化をしたい<br>
